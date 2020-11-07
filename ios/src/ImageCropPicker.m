@@ -412,7 +412,9 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
     [imageCropVC setModalPresentationStyle:UIModalPresentationCustom];
     [imageCropVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     [imageCropVC.cancelButton setTitle:cropperCancelText forState:UIControlStateNormal];
+    imageCropVC.cancelButton.contentEdgeInsets = UIEdgeInsetsMake(0,0,25,0);
     [imageCropVC.chooseButton setTitle:cropperChooseText forState:UIControlStateNormal];
+    imageCropVC.chooseButton.contentEdgeInsets = UIEdgeInsetsMake(0,0,25,0);
     dispatch_async(dispatch_get_main_queue(), ^{
         [[self getRootVC] presentViewController:imageCropVC animated:YES completion:nil];
     });
